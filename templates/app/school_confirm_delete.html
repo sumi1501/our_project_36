@@ -1,0 +1,22 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+
+<title>delete school</title>
+
+{% endblock %}
+
+
+{% block body_block %}
+<center>
+    <h1>this object should be deleted{{sclobject.sname}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="submit" value="yes-delete">
+    </form>
+    <a href="{% url 'Schoolhtml' %}" class="btn btn-warning">no take to back</a>
+    <a href="{% url 'Schooldetails' pk=sclobject.pk %}" class="btn btn-warning">no take me back to detail</a>
+
+</center>
+{% endblock %}
